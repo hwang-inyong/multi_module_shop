@@ -1,0 +1,30 @@
+server:
+  port: 8000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shop?serverTimezone=UTC&characterEncoding=UTF-8
+    username: hiy
+    password: 1q1q1q1q
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: shop.common.strategy.DataBaseNamingStrategy # 데이터 베이스 생성/삭제 대소문자 구분
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+
+    properties:
+      hibernate:
+        diarect: org.hibernate.dialect.H2Dialect  # 쿼리의 기준이 되는 데이터베이스 엔진을 설정
+        show_sql: true  # sql 쿼리를 보여주는 설정
+        format_sql: true  # sql query formatting
+        use_sql_comments: true  # sql 쿼리의 추가정보를 보여줌
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace  # query의 ?에 어떤 값이 들어가는지 추적할 수 있는 설정, TRACE Log에 값을 보여줌

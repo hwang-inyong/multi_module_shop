@@ -1,0 +1,9 @@
+rootProject.name = 'shop'
+include 'shop-admin'
+include 'shop-api'
+include 'shop-batch'
+include 'shop-core'
+include 'shop-admin'
+include 'shop-admin'
+include 'shop-admin'
+
